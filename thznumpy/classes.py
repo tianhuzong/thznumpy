@@ -1,5 +1,5 @@
 import sympy
-
+import numpy as np
 from thznumpy import utils
 
 class Point:
@@ -7,7 +7,7 @@ class Point:
     表示在平面直角坐标系上的点
     Point("A",5,2) # 表示点A在的坐标是(5,2)
     """
-    def __init__(self, name: str, x=None, y=None):
+    def __init__(self, name: str, x, y):
         """点构造函数
         :param name : str The name of the point,点的名字
         :param x 横坐标,任意实数
@@ -64,6 +64,14 @@ class Line:
         line_eq = sympy.Eq((x - x1)/(x2 - x1), (y - y1)/(y2 - y1))
         standard_eq = sympy.simplify(line_eq)
         return str(standard_eq.lhs - standard_eq.rhs) + " = 0"
+
+    def get_slope(self):
+        """返回方程的斜率"""
+        x1, y1 = self.p1.get_position()
+        x2, y2 = self.p2.get_position()
+        if x1 == x2:
+            return numpy.inf
+        return (y2 - y1) / (x2 - x1)
 
     def __repr__(self):
         return f"<Line {self.name} <{self.get_eq()}> p1={self.p1.get_position()} p2={self.p2.get_position()}>"
