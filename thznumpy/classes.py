@@ -14,14 +14,9 @@ class Point:
         :param y 纵坐标,任意实数
         """
         self.name = name
-        if x is not None:
-            self.x = x
-        else: 
-            self.x = sympy.Symbol('x')
-        if y is not None:
-            self.y = y
-        else:
-            self.y = sympy.Symbol('y')
+        self.x = x
+        self.y = y
+
 
     def get_position(self):
     	"""获取点的坐标对
@@ -58,9 +53,9 @@ class Line:
         x2, y2 = self.p2.get_position()
         x, y = sympy.symbols("x y")
         if x1 == x2:
-            return f"x = {x1}"
+            return sympy.simplify(f"x - {x1} = 0")
         elif y1 == y2:
-            return f"x = {x2}"
+            return sympy.simplify(f"y - {y1} = 0")
         line_eq = sympy.Eq((x - x1)/(x2 - x1), (y - y1)/(y2 - y1))
         standard_eq = sympy.simplify(line_eq)
         return str(standard_eq.lhs - standard_eq.rhs) + " = 0"
