@@ -33,3 +33,32 @@ class ThzNumTestCase(unittest.TestCase):
 
     def test_Line_unusual(self):
         """测试不正常的线(平行于坐标轴)"""
+        # 垂直于y
+        A = thznumpy.Point("A",1,20)
+        B = thznumpy.Point("B",5201314,20)
+        L1 = thznumpy.Line(A,B)
+        #测试线的方程
+        eq = L1.get_eq()
+        self.assertEqual(
+                eq,
+                "y - 20 = 0",
+                f"Failed,expect 'y - 20 = 0',but got {eq}"
+                )
+        #测试线的斜率
+        slope = L1.get_slope()
+        self.assertEqual(slope,0.0)
+
+        # 垂直于x
+        A = thznumpy.Point("A",1,20)
+        B = thznumpy.Point("B",1,520)
+        L1 = thznumpy.Line(A,B)
+        #测试线的方程
+        eq = L1.get_eq()
+        self.assertEqual(
+                eq,
+                "x - 1 = 0",
+                f"Failed,expect 'x - 1 = 0',but got {eq}"
+                )
+        #测试线的斜率
+        slope = L1.get_slope()
+        self.assertEqual(slope,np.inf)

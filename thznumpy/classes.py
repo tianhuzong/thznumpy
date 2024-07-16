@@ -53,11 +53,12 @@ class Line:
         x2, y2 = self.p2.get_position()
         x, y = sympy.symbols("x y")
         if x1 == x2:
-            return sympy.simplify(f"x - {x1} = 0")
+            standard_eq = sympy.simplify(sympy.Eq(x - x1, 0))
         elif y1 == y2:
-            return sympy.simplify(f"y - {y1} = 0")
-        line_eq = sympy.Eq((x - x1)/(x2 - x1), (y - y1)/(y2 - y1))
-        standard_eq = sympy.simplify(line_eq)
+            standard_eq = sympy.simplify(sympy.Eq(y - y1, 0))
+        else:
+            line_eq = sympy.Eq((x - x1)/(x2 - x1), (y - y1)/(y2 - y1))
+            standard_eq = sympy.simplify(line_eq)
         return str(standard_eq.lhs - standard_eq.rhs) + " = 0"
 
     def get_slope(self):
@@ -65,7 +66,7 @@ class Line:
         x1, y1 = self.p1.get_position()
         x2, y2 = self.p2.get_position()
         if x1 == x2:
-            return numpy.inf
+            return np.inf
         return (y2 - y1) / (x2 - x1)
 
     def __repr__(self):
