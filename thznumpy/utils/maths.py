@@ -6,7 +6,7 @@ import numpy as np
 # 三角函数
 
 
-def sin(x: int | float | list):
+def sin(x: Union[int, float, list]):
     """正弦函数
     :params x: int | float | list 角度值,注意是以角度为单位,可以传入一个数组
     :return np.float64 | np.array 返回这个角(这些角)的正弦值
@@ -22,7 +22,7 @@ def arcsin(x: Union[np.array, list]):
     return np.deg2rad(np.arcsin(x))
 
 
-def cos(x: int | float | list):
+def cos(x: Union[int, float, list]):
     """正弦函数
     :params x: int | float | list 角度值,注意是以角度为单位,可以传入一个数组
     :return np.float64 | np.array 返回这个角(这些角)的余弦值
@@ -38,7 +38,7 @@ def arccos(x: Union[np.array, list]):
     return np.deg2rad(np.arccos(x))
 
 
-def tan(x: int | float | list):
+def tan(x: Union[int, float, list]):
     """正切函数
     :params x: int | float | list 角度值,注意是以角度为单位,可以传入一个数组
     :return np.float64 | np.array 返回这个角(这些角)的正切值
