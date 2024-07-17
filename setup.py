@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-with open("./README.md",mode='r',encoding='utf-8') as f:
+with open("./README.md", mode='r', encoding='utf-8') as f:
     des = f.read()
 
 setup(
@@ -12,7 +12,7 @@ setup(
     author_email="tianhuzong@qq.com",
     url="https://github.com/tianhuzong/thztnumpy",
     license="MIT",
-    packages=find_packages(),     
+    packages=find_packages(),
     install_requires=[
         'sympy',
         'numpy',

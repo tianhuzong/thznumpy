@@ -2,6 +2,7 @@ import sympy
 import numpy as np
 from thznumpy import utils
 
+
 class Point:
     """点
     表示在平面直角坐标系上的点
@@ -17,12 +18,11 @@ class Point:
         self.x = x
         self.y = y
 
-
     def get_position(self):
-    	"""获取点的坐标对
-    	:return tuple 坐标
-    	"""
-    	return self.x, self.y
+        """获取点的坐标对
+        :return tuple 坐标
+        """
+        return self.x, self.y
 
     def __repr__(self):
         return f'<Point object name={self.name} x={self.x} y={self.y}>'
@@ -34,7 +34,7 @@ class Point:
 class Line:
     """直线
     表示在平面直角坐标系中的直线
-    
+    example:
     p1 = Point("A",0,0)
     p2 = Point("B",1,1)
     L1 = Line(p1,p2)
@@ -70,7 +70,9 @@ class Line:
         return (y2 - y1) / (x2 - x1)
 
     def __repr__(self):
-        return f"<Line {self.name} <{self.get_eq()}> p1={self.p1.get_position()} p2={self.p2.get_position()}>"
- 
+        return f"<Line {self.name} <{self.get_eq()}>\
+         p1={self.p1.get_position()}\
+         p2={self.p2.get_position()}>"
+
     def __str__(self):
         return f"Line {self.name}: {self.get_eq()}"

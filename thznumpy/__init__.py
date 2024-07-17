@@ -6,7 +6,6 @@
     |_|   |_| |_| /___| |_| \_|  \__,_| |_| |_| |_| | .__/   \__, |
                                                     |_|      |___/ 
 
-
 """
 version = "0.0.1"
 author = "Sen"
@@ -15,12 +14,15 @@ email = "tianhuzong@qq.com"
 __all__ = [
     'utils',
     'classes',
+    'condition',  # TODO 修改
     'Point',
     'Line',
+    'is_point_on_line',
 ]
 
-from . import utils
+from . import utils, classes, condition
 from .classes import Point, Line
+from .condition import is_point_on_line
 
 __art_text = """
    _____   _             _   _                                     
@@ -29,7 +31,6 @@ __art_text = """
     | |   | | | |  / /  | |\  | | |_| | | | | | | | | |_) | | |_| |
     |_|   |_| |_| /___| |_| \_|  \__,_| |_| |_| |_| | .__/   \__, |
                                                     |_|      |___/ 
-
 """
 
 print(
