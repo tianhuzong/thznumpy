@@ -4,7 +4,7 @@ with open("./README.md", mode='r', encoding='utf-8') as f:
 
 setup(
     name="thznumpy",      # 包名，用于安装和调用该包
-    version="0.0.2.dev20240717",               # 版本号
+    version="0.0.2.dev2024071702",               # 版本号
     author="Sen",
     description="a math lib developed by Sen",
     long_description=des,
@@ -13,6 +13,7 @@ setup(
     url="https://github.com/tianhuzong/thztnumpy",
     license="MIT",
     packages=find_packages(),
+    plat_name='any',
     install_requires=[
         'sympy',
         'numpy',
