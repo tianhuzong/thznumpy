@@ -64,8 +64,8 @@ class ThzNumpyClassesTestCase(unittest.TestCase):
         self.assertEqual(slope, np.inf)
 
 
-class ThzNumpyConditionTestCase(unittest.TestCase):
-    """condition模块的测试类"""
+class ThzNumpyGeometryUtilsTestCase(unittest.TestCase):
+    """geometry_utils模块的测试类"""
 
     def test_is_point_on_line(self):
         """测试点是否在直线上"""
