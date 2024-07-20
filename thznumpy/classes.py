@@ -58,8 +58,14 @@ class Line:
             standard_eq = sympy.simplify(sympy.Eq(y - y1, 0))
         else:
             line_eq = sympy.Eq((x - x1)/(x2 - x1), (y - y1)/(y2 - y1))
-            standard_eq = sympy.nsimplify(line_eq)
+            standard_eq = sympy.simplify(sympy.nsimplify(line_eq))
         return str(standard_eq.lhs - standard_eq.rhs) + " = 0"
+
+    def get_eq_obj(self):
+        """返回Eq类型直线的标准方程"""
+        eq_expr = sympy.parse_expr(self.get_eq().split(" = ")[0])
+        eq = sympy.Eq(eq_expr, 0)
+        return eq
 
     def get_slope(self):
         """返回方程的斜率"""

@@ -14,15 +14,18 @@ email = "tianhuzong@qq.com"
 __all__ = [
     'utils',
     'classes',
-    'geometry_utils',  # TODO 修改
+    'geometry_utils',
     'Point',
     'Line',
     'is_point_on_line',
+    'are_lines_parallel',
+    'are_lines_perpendicular',
+    'get_intersection',
 ]
 
 from . import utils, classes, geometry_utils
 from .classes import Point, Line
-from .geometry_utils import is_point_on_line
+from .geometry_utils import is_point_on_line, are_lines_parallel, are_lines_perpendicular, get_intersection
 
 __art_text = """
    _____   _             _   _                                     
