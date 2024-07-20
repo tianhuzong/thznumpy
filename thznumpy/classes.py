@@ -58,7 +58,7 @@ class Line:
             standard_eq = sympy.simplify(sympy.Eq(y - y1, 0))
         else:
             line_eq = sympy.Eq((x - x1)/(x2 - x1), (y - y1)/(y2 - y1))
-            standard_eq = sympy.simplify(line_eq)
+            standard_eq = sympy.nsimplify(line_eq)
         return str(standard_eq.lhs - standard_eq.rhs) + " = 0"
 
     def get_slope(self):
