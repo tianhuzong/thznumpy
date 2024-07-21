@@ -1,6 +1,5 @@
 import sympy
 import numpy as np
-from thznumpy import utils
 
 
 class Point:

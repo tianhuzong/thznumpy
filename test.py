@@ -153,4 +153,7 @@ class ThzNumpyGeometryUtilsTestCase(unittest.TestCase):
         # 两直线重合
         with self.assertRaises(ValueError):
             thznumpy.get_intersection("O", L1, L3)
-        self.assertEqual(thznumpy.get_intersection("O", L1, L4).get_position(), thznumpy.Point("O", 0, 0).get_position())
+        self.assertEqual(
+            thznumpy.get_intersection("O", L1, L4).get_position(),
+            thznumpy.Point("O", 0, 0).get_position()
+            )

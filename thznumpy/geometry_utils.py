@@ -79,5 +79,9 @@ def get_intersection(name, l1, l2):
     """
     if (l1.get_eq() == l2.get_eq()) or are_lines_parallel(l1, l2):
         raise ValueError("两直线平行或重合")
-    point_position = [position[1] for position in sympy.solve([l1.get_eq_obj(),l2.get_eq_obj()]).items()]
-    return thznumpy.Point(name,*point_position)
+    point_position = [
+        position[1] for position in sympy.solve(
+            [l1.get_eq_obj(), l2.get_eq_obj()]
+            ).items()
+        ]
+    return thznumpy.Point(name, *point_position)
