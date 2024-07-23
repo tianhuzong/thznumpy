@@ -1,31 +1,31 @@
-# classes模块
+# classes module
 `thznumpy.classes`
 
-## 准备
+## preparation
 ```python
 import thznumpy
 ```
 
 ## Point
-### Point对象,表示在平面直角坐标系上的点
-使用方法：
+### Point object,Represents a point in a plane rectangular coordinate system
+Usage：
 ```python
 thznumpy.Point(name, x, y)
 ```
-参数列表：
-| 参数名称 | 是否必填 | 参数类型 | 说明 |
+Parameters：
+| parameter | required | type | description |
 | :--- | :---: | :---: | ---: |
-| name | Y | str | 点的名称 |
-| x | Y | int<sup>1</sup> | 平面直角坐标系的横坐标 |
-| y | Y | int<sup>2</sup> | 平面直角坐标系的纵坐标 |
+| name | Y | str | the name of the point |
+| x | Y | int<sup>1</sup> | the abscissa of plane rectangular coordinate system |
+| y | Y | int<sup>2</sup> | the ordinate of the plane rectangular coordinate system |
 
-注：
+Tip：
 
-1.`x`的类型可以是int、float，甚至是numpy的一些数据类型、sympy的一些数据类型都可以
+1.The type of `x` can be int, float, as well as various data types from numpy and sympy
 
-2.`y`的类型可以是int、float，甚至是numpy的一些数据类型、sympy的一些数据类型都可以
+2.The type of `y` can be int, float, as well as various data types from numpy and sympy
 
-示例:
+example:
 ```python
 >>> import thznumpy
 >>> thznumpy.Point("O", 0, 0)
@@ -34,16 +34,16 @@ thznumpy.Point(name, x, y)
 <Point object name=A x=1.4142135623730951 y=0>
 ```
 
-### Point对象的方法
-| 方法 | 说明 |
+### the methods of Point object
+| method | desicription |
 | :--- | ---: |
-| `get_position(self)` | 获取点的坐标对,返回一个元组 |
+| `get_position(self)` | get the coordinates of the  point,returns a tuple |
 
 #### get_position
-返回点的坐标对,tuple(x, y)
-参数列表：无
+get the coordinates of the point,tuple(x, y)
+parameter list：None
 
-示例:
+example:
 ```python
 >>> import thznumpy
 >>> p1 = thznumpy.Point("O", 0, 0)
@@ -52,7 +52,7 @@ thznumpy.Point(name, x, y)
 ```
 
 ## Line
-### Line对象,表示在平面直角坐标系上的直线
+### Line object,表示在平面直角坐标系上的直线
 使用方法：
 ```python
 thznumpy.Line(p1, p2)
